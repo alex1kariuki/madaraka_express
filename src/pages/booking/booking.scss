@@ -1,16 +1,19 @@
 page-booking {
 
     .button_grid{
-        margin-left:75px; 
+        
         margin-top:20px;
     }
     #bookButton{
-        width:207px; 
+        margin-left: 50px;
+        margin-right: 50px;
         border-radius:5px;
     }
     #cancelButton{
-        margin-left:45px; 
-        border-radius:5px; 
-        width:119px;
+        
+        border-radius:5px;
+        margin-left: 100px; 
+        margin-right: 100px;
+        
     }
 }
