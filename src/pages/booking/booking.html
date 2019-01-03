@@ -1,0 +1,50 @@
+<!--
+  Generated template for the BookingPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="sgr_dark">
+      <ion-buttons end>
+          <button ion-button icon-only color="royal" (click)="closeModal()">
+            <ion-icon name="close"></ion-icon>
+          </button>
+        </ion-buttons>
+    <ion-title>New Booking</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <!--Fields to be collected-->
+  <ion-item padding>
+    <ion-label floating>Coach</ion-label>
+    <ion-input type="text"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating>From</ion-label>
+    <ion-input type="text"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating>To</ion-label>
+    <ion-input type="text"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating>Departure date</ion-label>
+    <ion-input type="text"></ion-input>
+  </ion-item>
+
+  <!--Buttons controlling content-->
+  <ion-grid class="button_grid">
+    <ion-row>
+      <button ion-button full id="bookButton" color="sgr_btns">Book Train</button>
+      </ion-row>
+      <ion-row>
+      <button ion-button full id="cancelButton" color="sgr_dark">Cancel</button>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
