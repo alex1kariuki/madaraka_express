@@ -1,6 +1,8 @@
 {
   "name": "madaraka_express",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "ionic-angular",
   "id": "e0fecb12"
 }
