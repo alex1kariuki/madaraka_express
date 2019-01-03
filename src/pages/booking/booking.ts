@@ -14,6 +14,7 @@ import { IonicPage, NavController, NavParams, Platform, ViewController } from 'i
   templateUrl: 'booking.html',
 })
 export class BookingPage {
+  booking: string = "one_way";
   isAndroid: boolean = false;
   constructor(public navCtrl: NavController, public navParams: NavParams,platform: Platform, private view: ViewController) {
     this.isAndroid = platform.is('android');

@@ -7,11 +7,11 @@
 <ion-header>
 
   <ion-navbar color="sgr_dark">
-      <ion-buttons end>
-          <button ion-button icon-only color="royal" (click)="closeModal()">
-            <ion-icon name="close"></ion-icon>
-          </button>
-        </ion-buttons>
+    <ion-buttons end>
+      <button ion-button icon-only color="royal" (click)="closeModal()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
     <ion-title>New Booking</ion-title>
   </ion-navbar>
 
@@ -19,30 +19,117 @@
 
 
 <ion-content>
-  <!--Fields to be collected-->
-  <ion-item padding>
-    <ion-label floating>Coach</ion-label>
-    <ion-input type="text"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label floating>From</ion-label>
-    <ion-input type="text"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label floating>To</ion-label>
-    <ion-input type="text"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label floating>Departure date</ion-label>
-    <ion-input type="text"></ion-input>
-  </ion-item>
+  <!--Button segment for the ride choice-->
+  <div padding>
+    <ion-segment [(ngModel)]="booking">
+      <ion-segment-button value="one_way">
+        One way
+      </ion-segment-button>
+      <ion-segment-button value="round_trip">
+        Round Trip
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+  <!--Switch board for the booking-->
+  <div [ngSwitch]="booking">
+    <ion-list *ngSwitchCase="'one_way'">
+      <!--Fields to be collected-->
+      <ion-item padding>
+        <ion-label floating>Coach</ion-label>
+        <ion-select [(ngModel)]="coach">
+          <ion-option value="business">Business Class</ion-option>
+          <ion-option value="economy">Economy Class</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>From</ion-label>
+        <ion-select [(ngModel)]="fromStation">
+          <ion-option value="nairobi">Nairobi Terminus</ion-option>
+          <ion-option value="mombasa">Mombasa Terminus</ion-option>
+          <ion-option value="voi">Voi Terminus</ion-option>
+          <ion-option value="mtito">Mtito Andei Terminus</ion-option>
+          <ion-option value="mariakani">Mariakani Terminus</ion-option>
+          <ion-option value="miaseny">Miaseny Terminus</ion-option>
+          <ion-option value="kibwezi">Kibwezi Terminus</ion-option>
+          <ion-option value="emali">Emali Terminus</ion-option>
+          <ion-option value="athi">Athi River Terminus</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>To</ion-label>
+        <ion-select [(ngModel)]="toStation">
+          <ion-option value="nairobi">Nairobi Terminus</ion-option>
+          <ion-option value="mombasa">Mombasa Terminus</ion-option>
+          <ion-option value="voi">Voi Terminus</ion-option>
+          <ion-option value="mtito">Mtito Andei Terminus</ion-option>
+          <ion-option value="mariakani">Mariakani Terminus</ion-option>
+          <ion-option value="miaseny">Miaseny Terminus</ion-option>
+          <ion-option value="kibwezi">Kibwezi Terminus</ion-option>
+          <ion-option value="emali">Emali Terminus</ion-option>
+          <ion-option value="athi">Athi River Terminus</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Departure date</ion-label>
+        <ion-datetime displayFormat="MM/DD/YYYY" min="2019-01-04" [(ngModel)]="myDate"></ion-datetime>
+      </ion-item>
+    </ion-list>
+    <!--Another case for round trip-->
+    <ion-list *ngSwitchCase="'round_trip'">
+      <!--Fields to be collected-->
+      <ion-item padding>
+        <ion-label floating>Coach</ion-label>
+        <ion-select [(ngModel)]="coach">
+          <ion-option value="business">Business Class</ion-option>
+          <ion-option value="economy">Economy Class</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>From</ion-label>
+        <ion-select [(ngModel)]="fromStation">
+          <ion-option value="nairobi">Nairobi Terminus</ion-option>
+          <ion-option value="mombasa">Mombasa Terminus</ion-option>
+          <ion-option value="voi">Voi Terminus</ion-option>
+          <ion-option value="mtito">Mtito Andei Terminus</ion-option>
+          <ion-option value="mariakani">Mariakani Terminus</ion-option>
+          <ion-option value="miaseny">Miaseny Terminus</ion-option>
+          <ion-option value="kibwezi">Kibwezi Terminus</ion-option>
+          <ion-option value="emali">Emali Terminus</ion-option>
+          <ion-option value="athi">Athi River Terminus</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>To</ion-label>
+        <ion-select [(ngModel)]="toStation">
+          <ion-option value="nairobi">Nairobi Terminus</ion-option>
+          <ion-option value="mombasa">Mombasa Terminus</ion-option>
+          <ion-option value="voi">Voi Terminus</ion-option>
+          <ion-option value="mtito">Mtito Andei Terminus</ion-option>
+          <ion-option value="mariakani">Mariakani Terminus</ion-option>
+          <ion-option value="miaseny">Miaseny Terminus</ion-option>
+          <ion-option value="kibwezi">Kibwezi Terminus</ion-option>
+          <ion-option value="emali">Emali Terminus</ion-option>
+          <ion-option value="athi">Athi River Terminus</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Departure date</ion-label>
+        <ion-datetime displayFormat="MM/DD/YYYY" min="2019-01-04" [(ngModel)]="myDate"></ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Return date</ion-label>
+        <ion-datetime displayFormat="MM/DD/YYYY" min="2019-01-05" [(ngModel)]="myDate"></ion-datetime>
+      </ion-item>
+    </ion-list>
+  </div>
+
 
   <!--Buttons controlling content-->
   <ion-grid class="button_grid">
     <ion-row>
       <button ion-button full id="bookButton" color="sgr_btns">Book Train</button>
-      </ion-row>
-      <ion-row>
+    </ion-row>
+    <ion-row>
       <button ion-button full id="cancelButton" color="sgr_dark">Cancel</button>
     </ion-row>
   </ion-grid>
