@@ -1,7 +1,7 @@
-<ion-menu [content]="content" style="margin-top:55px; ">
-  <ion-content style="background-color:#841F2C">
-    <ion-list style="background-color:#841F2C; color:white;">
-      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)" style="background-color:#841F2C; color:white;">
+<ion-menu [content]="content" class="side_menu_content">
+  <ion-content class="ion_content">
+    <ion-list class="side_menu_list">
+      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)" class="list_buttons">
         {{p.title}}
       </button>
     </ion-list>

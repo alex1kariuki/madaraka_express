@@ -22,14 +22,14 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Book a train', component: HomePage },
-      { title: 'Upcoming', component: ListPage },
-      { title: 'My Trips', component: HomePage },
-      { title: 'Check Ticket', component: ListPage },
-      { title: 'Stations', component: HomePage },
-      { title: 'Feedback', component: ListPage },
-      { title: 'Settings', component: HomePage },
-      { title: 'Help', component: ListPage },
+      { title: 'Book a train', component: DashboardPage },
+      { title: 'Upcoming', component: DashboardPage },
+      { title: 'My Trips', component: DashboardPage },
+      { title: 'Check Ticket', component: DashboardPage },
+      { title: 'Stations', component: DashboardPage },
+      { title: 'Feedback', component: DashboardPage },
+      { title: 'Settings', component: DashboardPage },
+      { title: 'Help', component: DashboardPage },
     ];
 
   }
