@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, Platform, ViewController, ModalController } from 'ionic-angular';
 import { PaymentsPage } from '../payments/payments';
+import { DashboardPage } from '../dashboard/dashboard';
 
 /**
  * Generated class for the BookingPage page.
@@ -26,10 +27,11 @@ export class BookingPage {
   }
   closeModal(){
     this.view.dismiss();
+    this.navCtrl.setRoot(DashboardPage);
   }
   bookButtonClicked(){
     const faq = this.modal.create(PaymentsPage);
     faq.present();
-    this.view.dismiss();
+    this.closeModal();
   }
 }

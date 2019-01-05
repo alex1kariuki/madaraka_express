@@ -3,6 +3,13 @@ import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { DashboardPage } from '../pages/dashboard/dashboard';
+import { BookingPage } from '../pages/booking/booking';
+import { UpcomingPage } from '../pages/upcoming/upcoming';
+import { TicketPage } from '../pages/ticket/ticket';
+import { StationsPage } from '../pages/stations/stations';
+import { FeedbackPage } from '../pages/feedback/feedback';
+import { SettingsPage } from '../pages/settings/settings';
+import { HelpPage } from '../pages/help/help';
 
 @Component({
   templateUrl: 'app.html'
@@ -20,13 +27,13 @@ export class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Book a train', component: DashboardPage },
-      { title: 'Upcoming', component: DashboardPage },
+      { title: 'Upcoming', component: UpcomingPage },
       { title: 'My Trips', component: DashboardPage },
-      { title: 'Check Ticket', component: DashboardPage },
-      { title: 'Stations', component: DashboardPage },
-      { title: 'Feedback', component: DashboardPage },
-      { title: 'Settings', component: DashboardPage },
-      { title: 'Help', component: DashboardPage },
+      { title: 'Check Ticket', component: TicketPage },
+      { title: 'Stations', component: StationsPage },
+      { title: 'Feedback', component: FeedbackPage },
+      { title: 'Settings', component: SettingsPage },
+      { title: 'Help', component: HelpPage },
     ];
 
   }
