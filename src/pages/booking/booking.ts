@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, Platform, ViewController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Platform, ViewController, ModalController } from 'ionic-angular';
+import { PaymentsPage } from '../payments/payments';
 
 /**
  * Generated class for the BookingPage page.
@@ -16,7 +17,7 @@ import { IonicPage, NavController, NavParams, Platform, ViewController } from 'i
 export class BookingPage {
   booking: string = "one_way";
   isAndroid: boolean = false;
-  constructor(public navCtrl: NavController, public navParams: NavParams,platform: Platform, private view: ViewController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,platform: Platform, private view: ViewController, public modal: ModalController) {
     this.isAndroid = platform.is('android');
   }
 
@@ -26,5 +27,9 @@ export class BookingPage {
   closeModal(){
     this.view.dismiss();
   }
-
+  bookButtonClicked(){
+    const faq = this.modal.create(PaymentsPage);
+    faq.present();
+    this.view.dismiss();
+  }
 }

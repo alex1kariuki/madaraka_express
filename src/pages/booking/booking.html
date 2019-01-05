@@ -34,7 +34,7 @@
   <div [ngSwitch]="booking">
     <ion-list *ngSwitchCase="'one_way'">
       <!--Fields to be collected-->
-      <ion-item padding>
+      <ion-item>
         <ion-label floating>Coach</ion-label>
         <ion-select [(ngModel)]="coach">
           <ion-option value="business">Business Class</ion-option>
@@ -77,7 +77,7 @@
     <!--Another case for round trip-->
     <ion-list *ngSwitchCase="'round_trip'">
       <!--Fields to be collected-->
-      <ion-item padding>
+      <ion-item>
         <ion-label floating>Coach</ion-label>
         <ion-select [(ngModel)]="coach">
           <ion-option value="business">Business Class</ion-option>
@@ -127,10 +127,10 @@
   <!--Buttons controlling content-->
   <ion-grid class="button_grid">
     <ion-row>
-      <button ion-button full id="bookButton" color="sgr_btns">Book Train</button>
+      <button ion-button full id="bookButton" (click)="bookButtonClicked()" color="sgr_btns">Book Train</button>
     </ion-row>
     <ion-row>
-      <button ion-button full id="cancelButton" color="sgr_dark">Cancel</button>
+      <button ion-button full id="cancelButton" (click)="closeModal()" color="sgr_dark">Cancel</button>
     </ion-row>
   </ion-grid>
 

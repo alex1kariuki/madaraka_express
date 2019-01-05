@@ -8,12 +8,14 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { DashboardPage } from '../pages/dashboard/dashboard';
 import { BookingPage } from '../pages/booking/booking';
+import { PaymentsPage } from '../pages/payments/payments';
 
 @NgModule({
   declarations: [
     MyApp,
     DashboardPage,
-    BookingPage
+    BookingPage,
+    PaymentsPage
   ],
   imports: [
     BrowserModule,
@@ -23,7 +25,8 @@ import { BookingPage } from '../pages/booking/booking';
   entryComponents: [
     MyApp,
     DashboardPage,
-    BookingPage
+    BookingPage,
+    PaymentsPage
   ],
   providers: [
     StatusBar,
