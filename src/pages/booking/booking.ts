@@ -32,6 +32,5 @@ export class BookingPage {
   bookButtonClicked(){
     const faq = this.modal.create(PaymentsPage);
     faq.present();
-    this.closeModal();
   }
 }
