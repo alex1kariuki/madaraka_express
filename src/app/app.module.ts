@@ -3,7 +3,6 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
-
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { DashboardPage } from '../pages/dashboard/dashboard';
@@ -15,6 +14,14 @@ import { StationsPage } from '../pages/stations/stations';
 import { FeedbackPage } from '../pages/feedback/feedback';
 import { SettingsPage } from '../pages/settings/settings';
 import { HelpPage } from '../pages/help/help';
+
+import { FcmProvider } from '../providers/fcm/fcm';
+import { Firebase } from '@ionic-native/firebase';
+import { HttpModule } from '@angular/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestore } from '@angular/fire/firestore';
+import {firebase_credentials} from './firebase.credentials'
 
 @NgModule({
   declarations: [
@@ -32,6 +39,10 @@ import { HelpPage } from '../pages/help/help';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    HttpClientModule,
+    HttpModule,
+    AngularFireModule.initializeApp(firebase_credentials),
+    AngularFireModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -49,7 +60,10 @@ import { HelpPage } from '../pages/help/help';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
+    Firebase,
+    FcmProvider,
+    AngularFirestore
   ]
 })
-export class AppModule {}
+export class AppModule { }
