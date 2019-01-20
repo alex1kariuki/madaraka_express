@@ -14,13 +14,15 @@ import { StationsPage } from '../pages/stations/stations';
 import { FeedbackPage } from '../pages/feedback/feedback';
 import { SettingsPage } from '../pages/settings/settings';
 import { HelpPage } from '../pages/help/help';
+
 import { FcmProvider } from '../providers/fcm/fcm';
 import { Firebase } from '@ionic-native/firebase';
-
 import { HttpModule } from '@angular/http';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { AngularFireModule } from '@angular/fire';
-import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFirestore } from '@angular/fire/firestore';
+import {firebase_credentials} from './firebase.credentials'
+
 @NgModule({
   declarations: [
     MyApp,
@@ -39,7 +41,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
     IonicModule.forRoot(MyApp),
     HttpClientModule,
     HttpModule,
-    AngularFireModule.initializeApp(firebase),
+    AngularFireModule.initializeApp(firebase_credentials),
     AngularFireModule
   ],
   bootstrap: [IonicApp],
@@ -59,8 +61,9 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
     StatusBar,
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
+    Firebase,
     FcmProvider,
-    Firebase
+    AngularFirestore
   ]
 })
 export class AppModule { }

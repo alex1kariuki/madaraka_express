@@ -28,6 +28,10 @@ export class FcmProvider {
       token = await this.firebaseNative.getToken();
       await this.firebaseNative.grantPermission();
     }
+    if (this.platform.is('cordova')) {
+      token = await this.firebaseNative.getToken();
+      await this.firebaseNative.grantPermission();
+    }
 
     return this.saveTokenToFirestore(token)
   }
